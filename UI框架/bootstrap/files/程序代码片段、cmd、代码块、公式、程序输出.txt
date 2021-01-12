@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bootstrap_learning</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <style>
+        .my-page {
+            margin-top: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container my-page">
+        <!-- 页面显示部分代码 -->
+        For example <code>&lt;section&gt;</code> as inline.
+        <!-- cmd命令 -->
+        <br>
+        <br> Python安装某些插件，可以直接在
+        <kbd>cmd</kbd>中安装。
+        <!-- 代码块 -->
+        <br>
+        <br>
+        <pre>
+            public static void main(String[] args) {
+                System.out.println("Hello, World！");
+            } 
+        </pre>
+        <!-- 变量、表达式的表示 -->
+        <br>
+        <br>
+        <var>y</var> = <var>a</var>*<var>x</var> + <var>b</var>
+        <!-- 程序输出 -->
+        <br>
+        <br>
+        <samp>Hello, World！</samp>
+    </div>
+</body>
+
+</html>

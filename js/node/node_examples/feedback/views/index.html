@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>反馈平台_基于Node.js</title>
+		<!-- 导入页面样式表 -->
+		<link rel="stylesheet" href="/public/css/index.css">
+		<!-- 引入element-ui样式 -->
+		<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+		<!-- 导入better-scroll滚动插件 -->
+		<script src="/public/js/better-scroll.min.js"></script>
+		<!-- 导入vue文件 -->
+		<script src="/public/js/vue.min.js"></script>
+		<!-- 引入element-ui组件库 -->
+		<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			<el-container style="height: 100%;">
+				<!-- 顶部标题&操作栏 -->
+				<el-header height="140px">
+					<span class="title">Example page header</span>
+					<span class="sub-title">Subtext for header</span>
+					<br />
+					<el-button type="success" @click="toPost">发表留言</el-button>
+				</el-header>
+				<!-- 留言区 -->
+				<el-main>
+					<ul>
+						{{ each comments }}
+						<li>{{ $value.name }}: {{ $value.message }} <span style="float: right;">{{ $value.dateTime }}</span></li>
+						{{ /each }}
+					</ul>
+				</el-main>
+			</el-container>
+		</div>
+
+		<!-- 页面Vue脚本 -->
+		<script>
+			const app = new Vue({
+				el: '#app',
+				data() {
+					return {
+						msg: '欢迎来到Vue'
+					}
+				},
+				methods: {
+					// 跳转到留言界面
+					toPost() {
+						window.location.href = '/post'
+					}
+				}
+			})
+		</script>
+		</script>
+	</body>
+</html>

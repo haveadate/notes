@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title></title>
+		<link rel="stylesheet" href="font/style.css">
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			html,
+			body {
+				height: 100%;
+				overflow: hidden;
+				background-color: black;
+				text-align: center;
+			}
+
+			h1 {
+				display: inline-block;
+				margin-top: 50px;
+				font: bold 80px "微软雅黑";
+				color: rgba(255, 255, 255, .3);
+				background-image: linear-gradient(120deg, rgba(255, 255, 255, 0) 100px, rgba(255, 255, 255, 1) 180px, rgba(255, 255, 255, 0) 260px);
+				-webkit-background-clip: text;
+				background-repeat: no-repeat;
+			}
+		</style>
+	</head>
+
+	<body>
+		<h1>South West Petroleum University</h1>
+		<script type="text/javascript">
+			const h1 = document.querySelector("h1");
+			let offset_x = -180;
+			setInterval(() =>{
+				offset_x += 20;
+				if (offset_x == 1300) {
+					offset_x = -180;
+				}
+				h1.style.backgroundPositionX = `${offset_x}px`;
+			}, 35)
+		</script>
+	</body>
+
+</html>

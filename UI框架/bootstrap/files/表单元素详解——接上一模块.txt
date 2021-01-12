@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bootstrap_learning</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"> -->
+    <style>
+        .my-page {
+            margin-top: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <form role="form" action="">
+        <!-- 文本输入框和多行文本输入框 -->
+        <input type="text" class=" form-control">
+        <textarea name="" id="" cols="30" rows="5" class=" form-control">Hello</textarea>
+        <!-- 复选框 -->
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" value="">
+                橘子
+            </label>
+        </div>
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" value="">
+                苹果
+            </label>
+        </div>
+        <!-- 单选框 -->
+        <div class=" radio">
+            <label for="">
+                <input name="sex" type="radio" checked>
+                男
+            </label>
+        </div>
+        <div class=" radio">
+            <label for="">
+                <input name="sex" type="radio">
+                女
+            </label>
+        </div>
+        <!-- 下拉列表 添加multiple属性可以显示全部的选项 -->
+        <select name="" id="" class=" form-control" multiple>
+            <option value="">成都</option>
+            <option value="">杭州</option>
+            <option value="">上海</option>
+            <option value="">北京</option>
+        </select>
+        <!-- 添加静态文本 -->
+        <p class=" form-control-static">邮箱格式: xxxx@163.com</p>
+        <!-- 不可以使用的input -->
+        <input type="text" class=" form-control" placeholder="102askkii" disabled>
+        <!-- 对照组 -->
+        <input type="text" placeholder="skajfka" disabled>
+        <!-- 一个区域内表单控件不可选中 -->
+        <fieldset disabled>
+            <label for="account">用户名</label>
+            <input type="text" class=" form-control" id="account">
+            <label for="password">密码</label>
+            <input type="text" class=" form-control" id="password">
+        </fieldset>
+        <!-- 只读的文本框 -->
+        <input type="text" class=" form-control" value="20173106" readonly>
+        <input type="text" class=" form-control" value="对照组" disabled>
+    </form>
+
+    <!-- 响应状态 -->
+    <!-- 引用时使用网络CDN还可以使用提供的图片 -->
+    <!-- 不知道为什么没有图片 -->
+    <form role="form" action="">
+        <div class="form-group has-success has-feedback">
+            <label for="account2">用户名</label>
+            <input type="text" id="account2" class="form-control">
+            <!-- 用span承载图片元素 复制图片名称，在子父元素中添加feedback -->
+            <span class="glyphicon glyphicon-ok form-control-feedback"></span>
+        </div>
+        <div class="form-group has-warning">
+            <label for="password2">密码</label>
+            <input type="password" id="password2" class=" form-control">
+            <span class=" help-block">不超过16位</span>
+        </div>
+        <div class="form-group has-error">
+            <label for="email2">邮箱</label>
+            <input type="email" id="email2" class=" form-control">
+        </div>
+    </form>
+</body>
+
+</html>

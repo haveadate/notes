@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>扇形导航</title>
+		<link rel="stylesheet" href="font/style.css">
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			html,
+			body {
+				height: 100%;
+				overflow: hidden;
+			}
+
+			#wrap {
+				position: fixed;
+				bottom: 10px;
+				right: 10px;
+				width: 50px;
+				height: 50px;
+			}
+
+			#wrap>.inner {
+				width: 100%;
+				height: 100%;
+				/* display: none; */
+			}
+
+			#wrap>.inner img {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 40px;
+				height: 40px;
+			}
+
+			#wrap>.home {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background-image: url(img/iconfontcog.png);
+				background-repeat: no-repeat;
+				background-size: 50px 50px;
+				background-color: white;
+				z-index: 999;
+				border-radius: 50%;
+				transition: 1s;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="wrap">
+			<div class="inner">
+				<img src="img/iconfonticon.png">
+				<img src="img/iconfontinfo.png">
+				<img src="img/iconfontjia.png">
+				<img src="img/iconfontweibo.png">
+				<img src="img/iconfontxing.png">
+			</div>
+			<div class="home"></div>
+		</div>
+		<script type="text/javascript">
+			window.onload = () => {
+				const homeEle = document.querySelector("#wrap>.home");
+				const imgs = document.querySelectorAll("#wrap>.inner img");
+				const c = 140;
+				let flag = true;
+
+				// 每个图片点击的过渡事件
+				function fn() {
+					this.style.transaction = "0.3s";
+					this.style.transform = "rotate(-360deg) scale(1)";
+					this.style.opacity = 1;
+
+					// 解绑事件
+					this.removeEventListener("transitionend", fn);
+				}
+
+				// 为每个图片添加点击事件
+				for (let i = 0; i < imgs.length; i++) {
+					imgs[i].onclick = function() {
+						this.style.transition = "0.3s";
+						this.style.transform = "rotate(-360deg) scale(1.5)";
+						this.style.opacity = 0.5;
+						this.addEventListener("transitionend", fn);
+					}
+				}
+
+				homeEle.onclick = function() {
+					if (flag) {
+						homeEle.style.transform = "rotate(-360deg)";
+						for (let i = 0; i < imgs.length; i++) {
+							let point = getPoint(c, i * 90 / (imgs.length - 1));
+							imgs[i].style.transform = "rotate(-360deg) scale(1)";
+							imgs[i].style.transition = `1s ${i*50}ms`;
+							imgs[i].style.top = -point.top + "px";
+							imgs[i].style.left = -point.left + "px";
+						}
+					} else {
+						homeEle.style.transform = "rotate(0deg)";
+						for (let i = 0; i < imgs.length; i++) {
+							imgs[i].style.transition = `1s ${(imgs.length-1-i)*50}ms`;
+							imgs[i].style.transform = "rotate(0deg) scale(1)";
+							imgs[i].style.top = "0px";
+							imgs[i].style.left = "0px";
+						}
+					}
+					flag = !flag;
+				}
+
+				/**
+				 * 已知一条边和一个角，求点的坐标
+				 * @param {Object} c 第三天边的长度
+				 * @param {Object} deg 角度
+				 */
+				function getPoint(c, deg) {
+					let x = Math.round(c * Math.sin(deg * Math.PI / 180));
+					let y = Math.round(c * Math.cos(deg * Math.PI / 180));
+
+					return {
+						left: x,
+						top: y
+					}
+				}
+			}
+		</script>
+	</body>
+
+</html>

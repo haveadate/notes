@@ -1,0 +1,114 @@
+/**
+ * @function 反馈主页样式
+ * @author haveadate@qq.com
+ */
+
+@import url(./normalize.css);
+
+// 元素独占父元素
+.only-one() {
+	width: 100%;
+	height: 100%;
+}
+
+// 溢出文字省略号显示
+.text-overflow-ellipsis(@lineNum: 1) {
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: @lineNum;
+	overflow: hidden;
+}
+
+// 初始化配置页面布局
+html {
+	.only-one;
+
+	body {
+		.only-one;
+
+		#app {
+			.only-one;
+		}
+	}
+}
+
+// 页面布局
+#app {
+	// 顶部标题&操作栏
+	.el-header {
+		position: relative;
+		padding-top: 20px;
+		// border-
+		box-sizing: border-box;
+		// 标题
+		.title {
+			font-size: 30px;
+			color: #333;
+			line-height: 50px;
+		}
+		// 副标题
+		.sub-title {
+			margin-left: 10px;
+			font-size: 20px;
+			color: #999;
+		}
+		// 按钮
+		.el-button {
+			margin-top: 10px;
+		}
+		// 底部边框
+		&::after {
+			content: '';
+			position: absolute;
+			bottom: 0;
+			left: 20px;
+			width: ~'calc(100% - 20px * 2)';
+			height: 1px;
+			background-color: #ccc;
+		}
+	}
+
+	// 留言区
+	.el-main {
+		// height: 500px;
+		height: ~'calc(100% - 140px)';
+		box-sizing: border-box;
+		
+		// 留言列表
+		ul {
+			padding: 0;
+			border: 1px solid #ccc;
+			border-radius: 4px;
+			list-style-type: none;
+			font-size: 16px;
+			// line-height: 45px;
+			line-height: 1.3;
+			color: #666;
+
+			// 留言项
+			li {
+				padding: 15px 20px;
+				border-bottom: 1px solid #ccc;	
+				cursor: default;
+				// 最后一项
+				&:last-child {
+					border: none;
+				}
+				// 斑马纹
+				&:nth-child(2n - 1) {
+					background-color: whitesmoke;
+				}
+				
+				// 相应鼠标经过
+				&:hover {
+					background-color: lightgray;
+				}
+				
+				// 溢出文字影藏
+				span {
+					.text-overflow-ellipsis(2);
+				}
+			}
+		}
+	}
+}

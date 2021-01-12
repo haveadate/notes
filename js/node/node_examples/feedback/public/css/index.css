@@ -1,0 +1,77 @@
+@import url(normalize.css);
+/**
+ * @function 反馈主页样式
+ * @author haveadate@qq.com
+ */
+html {
+  width: 100%;
+  height: 100%;
+}
+html body {
+  width: 100%;
+  height: 100%;
+}
+html body #app {
+  width: 100%;
+  height: 100%;
+}
+#app .el-header {
+  position: relative;
+  padding-top: 20px;
+  box-sizing: border-box;
+}
+#app .el-header .title {
+  font-size: 30px;
+  color: #333;
+  line-height: 50px;
+}
+#app .el-header .sub-title {
+  margin-left: 10px;
+  font-size: 20px;
+  color: #999;
+}
+#app .el-header .el-button {
+  margin-top: 10px;
+}
+#app .el-header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 20px;
+  width: calc(100% - 20px * 2);
+  height: 1px;
+  background-color: #ccc;
+}
+#app .el-main {
+  height: calc(100% - 140px);
+  box-sizing: border-box;
+}
+#app .el-main ul {
+  padding: 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  list-style-type: none;
+  font-size: 16px;
+  line-height: 1.3;
+  color: #666;
+}
+#app .el-main ul li {
+  padding: 15px 20px;
+  border-bottom: 1px solid #ccc;
+  cursor: default;
+}
+#app .el-main ul li:last-child {
+  border: none;
+}
+#app .el-main ul li:nth-child(2n - 1) {
+  background-color: whitesmoke;
+}
+#app .el-main ul li:hover {
+  background-color: lightgray;
+}
+#app .el-main ul li span {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>404 not found.</title>
+		<!-- 引入element-ui样式 -->
+		<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+		<!-- 导入vue文件 -->
+		<script src="/public/js/vue.min.js"></script>
+		<!-- 引入element-ui组件库 -->
+		<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+	</head>
+	<body>
+		<div id="app" style="margin-top: 50px; font-size: 30px; color: #333; text-align: center;">
+			<span style="display: inline-block; line-height: 50px;">404 not found.</span>
+			<el-link type="primary" href="/index" style="font-size: 30px; line-height: 50px; vertical-align: baseline;">回到首页</el-link>
+		</div>
+
+		<script>
+			const app = new Vue({
+				el: '#app'
+			})
+		</script>
+	</body>
+</html>

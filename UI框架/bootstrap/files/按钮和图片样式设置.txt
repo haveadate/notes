@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bootstrap_learning</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"> -->
+    <style>
+        .my-page {
+            margin-top: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 按钮 -->
+    <div class="container my-page">
+        <button type="button" class="btn btn-default">default</button>
+        <button type="button" class="btn btn-primary">primary</button>
+        <button type="button" class="btn btn-success">success</button>
+        <button type="button" class="btn btn-info">info</button>
+        <button type="button" class="btn btn-link">link</button>
+        <button type="button" class="btn btn-danger">danger</button>
+    </div>
+    <div class="div">
+        <!-- 通过已有样式改变按钮大小 -->
+        <button type="button" class="btn btn-primary btn-lg">primary</button>
+        <button type="button" class="btn btn-primary">primary</button>
+        <button type="button" class="btn btn-primary btn-sm">primary</button>
+        <button type="button" class="btn btn-primary btn-xs">primary</button>
+    </div>
+    <div class=" container">
+        <!-- btn-block 宽度100% -->
+        <button type="button" class="btn btn-info btn-block" disabled>info</button>
+        <!-- 这些样式并不是特有的 -->
+        <a href="https://www.baidu.com" class="btn btn-default btn-lg active" role="button" disabled="disabled">default</a>
+        <input type="button" class="btn btn-primary" value="input">
+        <!-- 建议使用button，而不是input，因为input在低版本火狐浏览器可能出现问题 -->
+    </div>
+
+    <img src="https://f12.baidu.com/it/u=3069591719,3481319789&fm=173&app=49&f=JPEG?w=640&h=360&s=97E063B307A3C8E2160DF47003005031&access=215967316" alt="" class=" img-circle">
+    <img src="https://f12.baidu.com/it/u=3069591719,3481319789&fm=173&app=49&f=JPEG?w=640&h=360&s=97E063B307A3C8E2160DF47003005031&access=215967316" alt="" class=" img-rounded">
+    <img src="https://f12.baidu.com/it/u=3069591719,3481319789&fm=173&app=49&f=JPEG?w=640&h=360&s=97E063B307A3C8E2160DF47003005031&access=215967316" alt="" class=" img-thumbnail">
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title></title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		label {
+			position: relative;
+			float: left;
+			width: 100px;
+			height: 100px;
+			border: 1px solid #ccc;
+			overflow: hidden;
+			border-radius: 50%;
+		}
+
+		label>input {
+			position: absolute;
+			left: -100px;
+		}
+
+		label>span {
+			position: absolute;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+		}
+
+		label>input:checked+span {
+			background-color: skyblue;
+		}
+	</style>
+</head>
+
+<body>
+	<label>
+		<input type="radio" name="choice">
+		<span></span>
+	</label>
+	<label>
+		<input type="radio" name="choice">
+		<span></span>
+	</label>
+	<label>
+		<input type="radio" name="choice">
+		<span></span>
+	</label>
+</body>
+
+</html>

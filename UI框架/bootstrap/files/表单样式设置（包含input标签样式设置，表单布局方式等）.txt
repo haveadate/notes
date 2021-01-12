@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bootstrap_learning</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <style>
+        .my-page {
+            margin-top: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 如果给表单添加class=form-inline，那么元素会变成内联，不设置的默认宽度是100% -->
+    <!-- 每个input之前必须要有个label，因为没有label，屏幕阅读器无法识别，如果要隐藏，那么可以添加class=sr-only -->
+    <form role="form" action="" class=" form-inline">
+        <div class=" form-group">
+            <!-- 日期 -->
+            <label for="日期">日期</label>
+            <input type="date" class="form-control" placeholder="xxxx年xx月xx日">
+            <!-- 邮箱 -->
+            <label for="email" class=" sr-only">email</label>
+            <input id="email" type="email" class=" form-control" placeholder="Enter email">
+        </div>
+        <div class="form-group">
+            <!-- 密码 -->
+            <label for="" class=" sr-only">password</label>
+            <input type="password" class=" form-control" placeholder="password">
+        </div>
+        <div class="form-group">
+            <!-- 文件 -->
+            <label for="">选择文件</label>
+            <input type="file" class=" form-control">
+            <p class=" help-block">请选择文件</p>
+        </div>
+    </form>
+    <br>
+    <br>
+    <hr>
+    <!-- 水平表单，默认排版并不好看，所以采用栅格样式布局 -->
+    <form action="" class=" form-horizontal" role="form">
+        <div class="form-group">
+            <label for="email2" class=" col-sm-2 control-label">email</label>
+            <div class=" col-sm-10">
+                <!-- 添加样式，更好看 -->
+                <input class=" form-control" type="email" placeholder="email" id="email2">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="password2" class=" col-sm-2 control-label">password</label>
+            <div class=" col-sm-10">
+                <input class=" form-control" type="password" placeholder="password" id="password2">
+            </div>
+        </div>
+        <!-- 记住密码 -->
+        <div class=" form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <div class="checkbox">
+                    <label for="">
+                        <input type="checkbox">记住密码
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <!-- 按钮 -->
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-4">
+                <button type="submit" class="btn btn-primary">登录</button>
+            </div>
+        </div>
+    </form>
+</body>
+
+</html>

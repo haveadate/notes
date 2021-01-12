@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>反馈信息</title>
+		<!-- 导入页面样式表 -->
+		<link rel="stylesheet" href="/public/css/index.css">
+		<!-- 引入element-ui样式 -->
+		<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+		<!-- 导入better-scroll滚动插件 -->
+		<script src="/public/js/better-scroll.min.js"></script>
+		<!-- 导入vue文件 -->
+		<script src="/public/js/vue.min.js"></script>
+		<!-- 引入element-ui组件库 -->
+		<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+		<!-- 引入jQuery -->
+		<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			<el-container>
+				<!-- 顶部标题&操作栏 -->
+				<el-header height="80px">
+					<span class="title">Example page header</span>
+					<el-link href="/index" style="font-size: 20px; margin-left: 10px; vertical-align: baseline;">back index</el-link>
+				</el-header>
+				<!-- 发表留言 -->
+				<el-main>
+					<el-form ref="leaveForm" :model="leaveMsg" :rules="rules">
+						<!-- 留言昵称 -->
+						<el-form-item label="留言昵称" prop="name">
+							<el-input v-model="leaveMsg.name" type="text" :clearable="true" :show-word-limit="true" :maxLength="16"
+							 placeholder="请输入留言昵称"></el-input>
+						</el-form-item>
+						<!-- 留言内容 -->
+						<el-form-item label="留言内容" prop="message">
+							<el-input v-model="leaveMsg.message" type="textarea" :autosize="{minRows: 4}" :clearable="true" :show-word-limit="true"
+							 :maxLength="200" placeholder="请输入留言内容"></el-input>
+						</el-form-item>
+						<!-- 发表留言 -->
+						<el-form-item>
+							<el-button type="primary" style="width: 120px;" @click="publishMsg">提交</el-button>
+							<el-button style="width: 120px;" @click="resetForm">重置</el-button>
+						</el-form-item>
+					</el-form>
+				</el-main>
+			</el-container>
+		</div>
+
+		<!-- 页面Vue脚本 -->
+		<script>
+			const app = new Vue({
+				el: '#app',
+				data() {
+					return {
+						// 表单绑定的数据
+						leaveMsg: {
+							name: '',
+							message: '',
+						},
+						// 表单验证规则
+						rules: {
+							name: [{
+								required: true,
+								message: '请输入留言人姓名',
+								trigger: 'blur'
+							}],
+							message: [{
+								required: true,
+								message: '请输入留言信息',
+								trigger: 'blur'
+							}]
+						}
+					};
+				},
+				methods: {
+					// 发表留言(提交表单)
+					publishMsg() {
+						this.$refs.leaveForm.validate(valid => {
+							// 只有表单验证通过才能提交
+							if (valid) {
+								// 提交表单数据
+								$.ajax({
+									type: 'GET',
+									url: 'http://127.0.0.1:8080/leaveMsg',
+									data: this.leaveMsg,
+									dataType: 'json',
+									success(result) {
+										// console.log(result)
+										// 提交成功
+										ELEMENT.Message.success(result.msg);
+										// 返回首页
+										window.setTimeout(() => {
+											window.location.href='/index'
+										}, 200)
+									}
+								})
+							}
+						})
+					},
+					// 重置表单内容
+					resetForm() {
+						this.$refs.leaveForm.resetFields()
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

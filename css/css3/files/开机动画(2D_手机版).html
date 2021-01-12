@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>开机动画2D</title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			html,
+			body {
+				height: 100%;
+				overflow: hidden;
+			}
+
+			#wrap {
+				position: relative;
+				height: 100%;
+				background-color: gray;
+			}
+
+			#wrap>.inner {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				text-align: center;
+				transform: translate3d(-50%, -50%, 0);
+				white-space: nowrap;
+			}
+
+			#wrap>.inner>span {
+				position: relative;
+				animation-name: move;
+				animation-duration: 0.3s;
+				animation-timing-function: linear;
+				animation-direction: alternate;
+				animation-iteration-count: infinite;
+			}
+
+			@keyframes move {
+				from {
+					top: 0px;
+				}
+
+				to {
+					top: -10px;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div id="wrap">
+			<div class="inner">
+				<span>几</span>
+				<span>百</span>
+				<span>斤</span>
+				<span>的</span>
+				<span>人</span>
+				<span>了</span>
+				<span>，</span>
+				<span>上</span>
+				<span>课</span>
+				<span>还</span>
+				<span>要</span>
+				<span>装</span>
+				<span>可</span>
+				<span>爱</span>
+			</div>
+		</div>
+
+		<script type="text/javascript">
+			window.onload = () => {
+				const spanNodes = document.querySelectorAll("#wrap>.inner>span");
+				const colors = ["red", "orange", "yellow", "green", "blue", "pink", "deeppink", "red", "orange", "yellow", "green",
+					"blue", "pink", "deeppink", "red", "orange", "yellow", "green", "blue", "pink", "deeppink"
+				];
+				for (let i = 0; i < spanNodes.length; i++) {
+					spanNodes[i].style.animationDelay = `${i*50}ms`;
+					spanNodes[i].style.color = colors[i];
+				}
+			}
+		</script>
+	</body>
+</html>

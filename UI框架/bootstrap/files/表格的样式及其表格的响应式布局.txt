@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bootstrap_learning</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <style>
+        .my-page {
+            margin-top: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="table-responsive my-page container">
+        <!-- class=table 给表格加上条纹 -->
+        <!-- class=table-striped 给表格加上斑马线（颜色与颜色之间呈斑马线） -->
+        <!-- class=table-bordered 给表格加上边框 -->
+        <!-- class=table-hover 给表格添加鼠标经过的样式 -->
+        <!-- class=table-condensed 将表格设置成为紧凑型表格 -->
+        <!-- 给表格的行添加class=active/success/info/warning/danger，表示不同的状态 -->
+        <!-- 给table的父元素class加上table-responsive，使表格能够响应页面的改变(响应式布局) -->
+        <table class="table table-condensed table-bordered">
+            <thead>
+                <tr>
+                    <th>学号</th>
+                    <th>姓名</th>
+                    <th>性别</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class=" active">
+                    <td>201731062305</td>
+                    <td>周蓉</td>
+                    <td>女</td>
+                </tr>
+                <tr class=" success">
+                    <td>201731062325</td>
+                    <td>田昊其</td>
+                    <td>男</td>
+                </tr>
+                <tr class=" info">
+                    <td>201731062326</td>
+                    <td>黄宇杰</td>
+                    <td>男</td>
+                </tr>
+                <tr class=" warning">
+                    <td>201731062326</td>
+                    <td>黄宇杰</td>
+                    <td>男</td>
+                </tr>
+                <tr class=" danger">
+                    <td>201731062326</td>
+                    <td>黄宇杰</td>
+                    <td>男</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,11 @@
+# 忽略所有以 . 开头的文件、文件夹
+.*
+
+# 忽略 node_modules 目录
+node_modules
+
+# 忽略 blogs 目录
+blogs
+
+# 保留 .gitignore 文件
+!.gitignore

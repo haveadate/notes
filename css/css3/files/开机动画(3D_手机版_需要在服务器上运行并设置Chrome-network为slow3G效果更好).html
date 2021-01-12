@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>开机动画3D</title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			html,
+			body {
+				height: 100%;
+				overflow: hidden;
+			}
+
+			#wrap {
+				height: 100%;
+				position: relative;
+				background-color: skyblue;
+			}
+
+			#wrap>.inner {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				width: 100%;
+				text-align: center;
+				perspective: 200px;
+			}
+
+			#wrap>.inner>img {
+				width: 30%;
+				transform-style: preserve-3d;
+				animation: move 2s infinite normal linear;
+			}
+
+			@keyframes move {
+				from {
+					transform: rotateY(0deg);
+				}
+
+				to {
+					transform: rotateY(360deg);
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div id="wrap">
+			<div class="inner">
+				<img src="img/anta.png">
+				<p>已加载0%</p>
+			</div>
+		</div>
+		<script type="text/javascript">
+			window.onload = () => {
+				const imgSrcs = [
+					"img/anta - 副本 (2).png",
+					"img/anta - 副本 (3).png",
+					"img/anta - 副本 (4).png",
+					"img/anta - 副本.png",
+					"img/anta.png",
+					"img/border - 副本 (2).png",
+					"img/border - 副本 (3).png",
+					"img/border - 副本 (4).png",
+					"img/border - 副本.png",
+					"img/border.png",
+					"img/iconfontcog - 副本 (2).png",
+					"img/iconfontcog - 副本 (3).png",
+					"img/iconfontcog - 副本 (4).png",
+					"img/iconfontcog - 副本.png",
+					"img/iconfontcog.png",
+					"img/iconfonthome - 副本 (2).png",
+					"img/iconfonthome - 副本 (3).png",
+					"img/iconfonthome - 副本 (4).png",
+					"img/iconfonthome - 副本.png",
+					"img/iconfonthome.png",
+					"img/iconfonticon - 副本 (2).png",
+					"img/iconfonticon - 副本 (3).png",
+					"img/iconfonticon - 副本 (4).png",
+					"img/iconfonticon - 副本.png",
+					"img/iconfonticon.png",
+					"img/iconfontinfo - 副本 (2).png",
+					"img/iconfontinfo - 副本 (3).png",
+					"img/iconfontinfo - 副本 (4).png",
+					"img/iconfontinfo - 副本.png",
+					"img/iconfontinfo.png",
+					"img/iconfontjia - 副本 (2).png",
+					"img/iconfontjia - 副本 (3).png",
+					"img/iconfontjia - 副本 (4).png",
+					"img/iconfontjia - 副本.png",
+					"img/iconfontjia.png",
+					"img/iconfontlink - 副本 (2).png",
+					"img/iconfontlink - 副本 (3).png",
+					"img/iconfontlink - 副本 (4).png",
+					"img/iconfontlink - 副本.png",
+					"img/iconfontlink.png",
+					"img/iconfontweibo - 副本 (2).png",
+					"img/iconfontweibo - 副本 (3).png",
+					"img/iconfontweibo - 副本 (4).png",
+					"img/iconfontweibo - 副本.png",
+					"img/iconfontweibo.png",
+					"img/iconfontxing - 副本 (2).png",
+					"img/iconfontxing - 副本 (3).png",
+					"img/iconfontxing - 副本 (4).png",
+					"img/iconfontxing - 副本.png",
+					"img/iconfontxing.png",
+					"img/QQ图片20200813130401 - 副本 (2).jpg",
+					"img/QQ图片20200813130401 - 副本 (3).jpg",
+					"img/QQ图片20200813130401 - 副本 (4).jpg",
+					"img/QQ图片20200813130401 - 副本.jpg",
+					"img/QQ图片20200813130401.jpg"
+				];
+
+				let flag = 0;
+				const pNode = document.querySelector("#wrap>.inner>p")
+				for (let i = 0; i < imgSrcs.length; i++) {
+					const img = new Image();
+					// 自动发送请求给服务器，下载图片
+					img.src = imgSrcs[i];
+					// 请求成功
+					img.onload = function() {
+						flag++;
+						pNode.innerHTML = `已加载${Math.round(flag/imgSrcs.length*100)}%`;
+					}
+
+					// 请求失败
+					img.onerror = function() {
+						console.log(`图片${imgSrcs[i]}请求失败`);
+					}
+				}
+			}
+		</script>
+	</body>
+</html>
