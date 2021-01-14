@@ -2,7 +2,7 @@
 
 ## 相关信息
 
-> 文档地址：https://www.runoob.com/git/git-install-setup.html
+> 文档：https://www.runoob.com/git/git-install-setup.html
 >
 > github: https://github.com/haveadate
 >

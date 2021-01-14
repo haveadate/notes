@@ -1,0 +1,78 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/navigator/navigator",
+			"style": {
+				"navigationBarTitleText": "导航",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/home/home",
+			"style": {
+				"navigationBarTitleText": "首页",
+				"enablePullDownRefresh": true,
+				"onReachBottomDistance": 200
+			}
+		},
+		{
+			"path": "pages/message/message",
+			"style": {
+				"navigationBarBackgroundColor": "#E0EEE0",
+				"navigationBarTitleText": "消息记录",
+				"navigationBarTextStyle": "black",
+				"h5": {
+					"pullToRefresh": {
+						"color": "#CDC673"
+					}
+				}
+			}
+		},
+		{
+			"path": "pages/contact/contact",
+			"style": {
+				"navigationBarTitleText": "联系我们",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/detail/detail",
+			"style": {
+				"navigationBarTitleText": "详情",
+				"enablePullDownRefresh": false
+			}
+		}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "white",
+		"navigationBarTitleText": "mypro",
+		"navigationBarBackgroundColor": "#66CDAA",
+		"backgroundColor": "#9BCD9B",
+		"backgroundTextStyle": "light"
+	},
+	"tabBar": {
+		"color": "#87CEEB",
+		"selectedColor": "#7CCD7C",
+		"backgroundColor": "#FAFAD2",
+		"borderStyle": "black",
+		"list": [{
+				"text": "首页",
+				"pagePath": "pages/home/home",
+				"iconPath": "static/tabs/home.png",
+				"selectedIconPath": "static/tabs/home-active.png"
+			},
+			{
+				"text": "消息",
+				"pagePath": "pages/message/message",
+				"iconPath": "static/tabs/message.png",
+				"selectedIconPath": "static/tabs/message-active.png"
+			},
+			{
+				"text": "联系",
+				"pagePath": "pages/contact/contact",
+				"iconPath": "static/tabs/contact.png",
+				"selectedIconPath": "static/tabs/contact-active.png"
+			}
+		]
+	}
+}
