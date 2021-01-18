@@ -139,6 +139,8 @@ $ git mv fileName/dirName newPath
 ```shell
 # 创建分支: 分支内容和创建时主分支内容保持一致
 $ git branch branchName
+# 将添加本地分支至远程(上传本地新创建的分支)
+$ git push --set-upstream origin branchName
 
 # 切换分支
 $ git checkout branchName
@@ -151,6 +153,8 @@ $ git checkout -b branchName
 
 # 删除分支
 $ git branch -d branchName
+# 删除远程分支
+$ git push origin --delete branchName
 ```
 
 > ```shell
