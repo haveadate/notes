@@ -635,15 +635,15 @@ npm install --global npm
 
 #### npm 常用命令
 
-- npm init：生成 package.json 文件；
+- **npm init**：生成 package.json 文件；
   + npm init --yes（npm init -y）：跳过向导，快速生成；
-- npm intall（npm i）：一次性把 package.json 文件 dependencies 选项中的依赖项全部安装；
-- npm install 包名（npm i 包名）：只下载（现在也能添加安装信息到 package.json 文件中的 dependencies 选项）；
-- npm install --save 包名（npm i -S 包名）：下载并且保存依赖项（添加安装信息到 package.json 文件中的 dependencies 选项中）；
-- npm uninstall 包名（npm un 包名）：只删除，如果有依赖项会依然保存；
-- npm uninstall 包名 --save（npm un 包名 -S）：删除的同时也会把依赖信息去除；、
-- npm help：查看使用帮助；
-- npm 命令 --help：查看某一指令的使用帮助，例如忘记了 uninstall 命令的简写可通过 `npm uninstall --help` 查看使用帮助；
+- **npm intall（npm i）**：一次性把 package.json 文件 dependencies 选项中的依赖项全部安装；
+- **npm install 包名（npm i 包名）**：只下载（现在也能添加安装信息到 package.json 文件中的 dependencies 选项）；
+- **npm install --save 包名（npm i -S 包名）**：下载并且保存依赖项（添加安装信息到 package.json 文件中的 dependencies 选项中）；
+- **npm uninstall 包名（npm un 包名）**：只删除，如果有依赖项会依然保存；
+- **npm uninstall 包名 --save（npm un 包名 -S）**：删除的同时也会把依赖信息去除；、
+- **npm help**：查看使用帮助；
+- **npm 命令 --help**：查看某一指令的使用帮助，例如忘记了 uninstall 命令的简写可通过 `npm uninstall --help` 查看使用帮助；
 
 #### 解决 npm 被墙问题
 
