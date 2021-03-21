@@ -10,6 +10,6 @@
 
 > 码云：https://gitee.com/haveadate
 
-> CSDN：https://blog.csdn.net/qq_42489725
+> 博客：https://www.cnblogs.com/haveadate/
 
 > email：haveadate@qq.com
